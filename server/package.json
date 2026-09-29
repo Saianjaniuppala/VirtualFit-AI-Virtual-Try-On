@@ -1,1 +1,24 @@
-
+{
+  "name": "virtual-tryon-server",
+  "version": "0.1.0",
+  "description": "REST API skeleton for VirtualFit — MongoDB + Express",
+  "main": "index.js",
+  "scripts": {
+    "dev":   "nodemon index.js",
+    "start": "node index.js",
+    "seed":  "node seed.js"
+  },
+  "dependencies": {
+    "express":    "^4.21.0",
+    "mongoose":   "^8.7.1",
+    "cors":       "^2.8.5",
+    "dotenv":     "^16.4.5",
+    "bcryptjs":   "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "morgan":     "^1.10.0",
+    "helmet":     "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
