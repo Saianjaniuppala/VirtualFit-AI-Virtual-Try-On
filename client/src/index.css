@@ -33,3 +33,97 @@
     border-radius: 3px;
   }
 }
+@layer components {
+  .glass-card {
+    @apply bg-surface-card border border-surface-border rounded-2xl backdrop-blur-sm;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-semibold px-6 py-2.5 rounded-xl
+           transition-all duration-200 active:scale-95 shadow-lg shadow-brand-900/40;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-hover hover:bg-surface-border text-white font-medium px-6 py-2.5
+           rounded-xl border border-surface-border transition-all duration-200 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply text-gray-400 hover:text-white hover:bg-surface-hover px-4 py-2
+           rounded-xl transition-all duration-200;
+  }
+
+  .badge {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+
+  .input {
+    @apply bg-surface-hover border border-surface-border text-white placeholder-gray-500
+           rounded-xl px-4 py-2.5 w-full focus:outline-none focus:border-brand-500
+           focus:ring-1 focus:ring-brand-500 transition-colors;
+    }
+
+  .section-title {
+    @apply text-2xl font-bold text-white tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-gray-400 text-sm mt-1;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-400 to-purple-300 bg-clip-text text-transparent;
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+  }
+
+  .canvas-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  .canvas-container video,
+  .canvas-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .canvas-container video {
+    object-fit: cover;
+    transform: scaleX(-1);
+  }
+
+  .canvas-container canvas {
+    transform: scaleX(-1);
+  }
+}
+
+/* Skeleton loading pulse */
+.skeleton {
+  @apply animate-pulse bg-surface-hover rounded-xl;
+}
+
+/* Camera scan line animation */
+@keyframes scanLine {
+  0%   { top: 0%; }
+  100% { top: 100%; }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+  animation: scanLine 2.5s linear infinite;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
