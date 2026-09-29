@@ -1,1 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --bg-primary: #0f0f1a;
+    --bg-card:    #1a1a2e;
+    --border:     #2e2e4a;
+    --text-muted: #8888aa;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-surface text-white font-sans;
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-card);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4c1d95;
+    border-radius: 3px;
+  }
+}
